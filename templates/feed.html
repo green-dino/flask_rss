@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html' %}
+
+{% block title %}RSS Reader - Feeds{% endblock %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ feed['name'] }} Feed</title>
+</head>
+<body>
+    <h1>{{ feed['name'] }} Feed</h1>
+    <p>Category: {{ feed['category'] }}</p>
+    
+    <ul>
+        {% for item in feed_items %}
+            <li>
+                <a href="{{ item.link }}">{{ item.title }}</a>
+                <p>{{ item.published }}</p>
+                <p>{{ item.summary }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+    <a href="{{ url_for('index') }}">Back to Feeds</a>
+</body>
+</html>

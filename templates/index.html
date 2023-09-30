@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS Reader - Feeds</title>
+</head>
+<body>
+    <h1>RSS Feeds</h1>
+
+    <!-- Add Feed Form -->
+    <form method="POST" action="/add_feed">
+        <label for="feed_name">Feed Name:</label>
+        <input type="text" id="feed_name" name="feed_name" required>
+        <br>
+        <label for="feed_url">Feed URL:</label>
+        <input type="url" id="feed_url" name="feed_url" required>
+        <br>
+        <label for="feed_category">Category:</label> <!-- Ensure the name matches here -->
+        <input type="text" id="feed_category" name="feed_category" required>
+        <br>
+        <button type="submit">Add Feed</button>
+    </form>
+
+    <ul>
+        {% for feed in feeds %}
+            <li>
+                {{ feed['name'] }} - Category: {{ feed['category'] }} - <a href="{{ url_for('view_feed', index=loop.index0) }}">View</a> - 
+                <a href="{{ url_for('remove_feed', index=loop.index0) }}" class="remove-feed">Remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+   
+</body>
+</html>
