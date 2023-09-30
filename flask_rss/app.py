@@ -57,14 +57,14 @@ def remove_feed(index):
 
 @app.route('/')
 def index():
-    return render_template('index.html', feeds=rss_feeds)
+    return render_template('flask_rss/templates/index.html', feeds=rss_feeds)
 
 @app.route('/feed/<int:index>')
 def view_feed(index):
     if 0 <= index < len(rss_feeds):
         feed = rss_feeds[index]
         feed_items = parse_rss_feed(feed['url'])
-        return render_template('feed.html', feed=feed, feed_items=feed_items)
+        return render_template('flask_rss/templates/feed.html', feed=feed, feed_items=feed_items)
     else:
         return "Invalid feed index"
 
