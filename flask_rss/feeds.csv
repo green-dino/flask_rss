@@ -1,6 +1,5 @@
 name,url,category
+Smithsonian Magazine,https://www.smithsonianmag.com/rss,Culture
+TED Talks,https://www.ted.com/feeds/talks.rss,Education
+NASA Breaking News,https://www.nasa.gov/rss/dyn/breaking_news.rss,Science
 National Geographic Photo of the Day,https://www.nationalgeographic.com/photography/photo-of-the-day/_jcr_content/.rss,Photography
-NASA Breaking News,https://www.nasa.gov/rss/dyn/breaking_news.rss,Science & Space
-New York Times Technology,https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml,Technology
-TED Talks,https://www.ted.com/feeds/talks.rss,Education & Inspiration
-Smithsonian Magazine,https://www.smithsonianmag.com/rss,Culture & History
