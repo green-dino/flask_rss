@@ -1,0 +1,111 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color for the entire page */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style the main content container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the form */
+form {
+    margin-bottom: 20px;
+}
+
+/* Style the form input fields */
+input[type="text"],
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style the feed list */
+ul {
+    list-style: none;
+}
+
+/* Style feed items */
+li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style feed category label */
+.category-label {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Style the "View" and "Remove" links */
+.view-feed-link,
+.remove-feed-link {
+    color: #333;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Style the "Back to Feeds" link */
+.back-to-feeds-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Style feed items in the detail view */
+.feed-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
