@@ -2,8 +2,15 @@
 from flask import Flask, render_template, request, redirect, url_for
 import feedparser
 import csv
+from flask_paginate import Pagination, get_page_args
+
 
 app = Flask(__name__)
+
+# Items per page
+PER_PAGE = 10
+
+
 
 # File path for the CSV file
 csv_file = 'feeds.csv'
@@ -57,7 +64,19 @@ def remove_feed(index):
 
 @app.route('/')
 def index():
-    return render_template('index.html', feeds=rss_feeds)
+    # get page number from URL
+    page = request.args.get('page', type=int, default=1)
+
+    start = (page - 1) * PER_PAGE
+    end = start + PER_PAGE
+
+    #slice list 
+    feeds_to_display = rss_feeds[start:end]
+
+    #pagination object 
+    pagination = Pagination(page=page, total=len(rss_feeds), per_page=PER_PAGE, css_framework='boostrap4')  
+
+    return render_template('index.html', feeds=feeds_to_display, pagination=pagination)
 
 @app.route('/feed/<int:index>')
 def view_feed(index):
